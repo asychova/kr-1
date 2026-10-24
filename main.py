@@ -1,13 +1,12 @@
-n = int(input("Введіть ціле додатне число n: "))
-result = []
-for i in range(1, n + 1):
-    if i % 3 == 0 and i % 5 == 0:
-        result.append("fizzbuzz")
-    elif i % 3 == 0:
-        result.append("fizz")
-    elif i % 5 == 0:
-        result.append("buzz")
+user_input = input("Введіть елементи через пробіл: ")
+elements = user_input.split()
+processed_list = []
+for i in range(len(elements) - 1, -1, -1):
+    item = elements[i]
+    if item.lstrip('-').isdigit():
+        number = int(item)
+        inverted_number = -number 
+        processed_list.append(inverted_number)
     else:
-        result.append(str(i))
-final_string = " ".join(result)
-print(final_string)
+        processed_list.append(item)
+print(processed_list)
