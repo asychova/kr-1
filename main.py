@@ -1,12 +1,9 @@
-user_input = input("Введіть елементи через пробіл: ")
-elements = user_input.split()
-processed_list = []
-for i in range(len(elements) - 1, -1, -1):
-    item = elements[i]
-    if item.lstrip('-').isdigit():
-        number = int(item)
-        inverted_number = -number 
-        processed_list.append(inverted_number)
-    else:
-        processed_list.append(item)
-print(processed_list)
+text = input("Введіть рядок символів: ")
+pairs_list = []
+counted_chars = []
+for char in text:
+    if char not in counted_chars:
+        count = text.count(char)
+        pairs_list.append((char, count))
+        counted_chars.append(char)
+print(pairs_list)
